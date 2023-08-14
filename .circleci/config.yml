@@ -22,7 +22,7 @@ jobs:
     configure_infrastructure:  # Choose any name, such as `build`
         # The primary container, where your job's commands will run
       docker:
-        - image: python:3.7-alpine3.11
+        - image: python:3.9.7-alpine3.14
       steps:
         - checkout
         - add_ssh_keys:
