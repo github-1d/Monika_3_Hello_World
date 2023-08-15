@@ -57,7 +57,7 @@ jobs:
         - run:
             name: smoke test
             command:  return 1
-        #- destroy_environment  
+        - destroy_environment  
             # command: |
             #   URL="https://blog.udacity.com/"
             #   # Test if website exists
@@ -74,4 +74,5 @@ workflows:
       jobs:
         - create_infrastructure
         #- configure_infrastructure
-        #- smoke_test
+        requires:
+        - smoke_test
