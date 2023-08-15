@@ -22,12 +22,12 @@ jobs:
     configure_infrastructure:  # Choose any name, such as `build`
         # The primary container, where your job's commands will run
       docker:
-        - image: python:3.11.0-alpine3.17
+        - image: python:3.11-rc-alpine
       steps:
         - checkout
         - add_ssh_keys:
             # You can get this ID in the section where you registered the SSH Key
-              fingerprints: ["1c:7c:20:57:f3:f8:3d:27:23:93:1c:90:d5:f4:38:55"] 
+              fingerprints: ["a6:7c:fd:42:92:cd:fd:84:41:6c:3b:af:bf:05:12:97"] 
         - run:
             name: Install  Ansible
             command: |
