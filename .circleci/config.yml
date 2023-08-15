@@ -9,6 +9,12 @@ commands:
     destroy_environment:
         steps:
           - run:
+              when: on_fail
+              name: install aws aws-cli
+              command: |
+                apk update
+                apk -y add awscli
+          - run:
               name: Destroy environment
               # ${CIRCLE_WORKFLOW_ID} is a Built-in environment variable 
               # ${CIRCLE_WORKFLOW_ID:0:5} takes the first 5 chars of the variable CIRCLE_CI_WORKFLOW_ID 
